@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def generate_gulzar_style_poetry(insult_target):
-    client = api_key=os.getenv("GROK_API_KEY")  # Add your API key here
+    client = api_key=os.getenv(GROK_API_KEY)  # Add your API key here
     prompt = f"Compose a poetic insult in the style of Gulzar, filled with depth and lyrical beauty, directed at {insult_target}. Use rich metaphors and Urdu/Hindi elegance."
     
     chat_completion = client.chat.completions.create(
