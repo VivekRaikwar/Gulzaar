@@ -1,10 +1,13 @@
 import os
 import streamlit as st
 from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def generate_gulzar_style_poetry(insult_target):
-    client = Groq(api_key="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")  # Add your API key here
-    
+    client = Groq(api_key=os.getenv(GROK_API_KEY)  # Add your API key here
+    "g
     prompt = f"Compose a poetic insult in the style of Gulzar, filled with depth and lyrical beauty, directed at {insult_target}. Use rich metaphors and Urdu/Hindi elegance."
     
     chat_completion = client.chat.completions.create(
@@ -26,3 +29,4 @@ if st.button("Generate Insult"):
         st.write(poetry_insult)
     else:
         st.warning("Please enter a target for the insult.")
+ 
